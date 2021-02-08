@@ -63,11 +63,16 @@ def parse():
                     f.write(results + '/n')
            
 if __name__ == '__main__':
-    FileRoot = r'D:\pdf_txt\test'
+    FileRoot = r'D:\pdf_txt\test' 
+    #初始文件夹（只用改这里）
+   
     for parent, dirnames, filenames in os.walk(FileRoot):
         for filename in filenames:
             text_path = os.path.join(parent, filename)
+            # 读取pdf文档的路径
             write_path = text_path.replace(".pdf", ".txt")
+            # 写入txt的路径
+          
             print('text_path', text_path)
             print('write_path', write_path)
             parse()
